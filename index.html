@@ -1,272 +1,275 @@
-<<<<<<< HEAD <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>For Shalet 💖</title>
+<head>
+    <meta charset="UTF-8">
+    <title>For Shalet 💖</title>
 
-        <!-- Handwriting font -->
-        <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <!-- Handwriting font -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <style>
-            body {
-                margin: 0;
-                font-family: 'Segoe UI', sans-serif;
-                height: 100vh;
-                overflow: hidden;
-                text-align: center;
-                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-                transition: background 1.5s ease;
-                color: #5a3b2e;
-            }
-            
-            .screen {
-                position: absolute;
-                inset: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: transform 1s ease, opacity 1s ease;
-                padding: 0 10px;
-            }
-            
-            .hidden {
-                transform: translateX(100%);
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            transition: background 1.5s ease;
+            color: #5a3b2e;
+        }
+        
+        .screen {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 1s ease, opacity 1s ease;
+            padding: 0 10px;
+        }
+        
+        .hidden {
+            transform: translateX(100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .card {
+            background: rgba(255, 250, 240, 0.95);
+            padding: 30px 20px;
+            border-radius: 20px;
+            max-width: 440px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            position: relative;
+            transition: background 1s ease;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            margin-bottom: 12px;
+            color: #ff2f6d;
+        }
+        
+        p {
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            line-height: 1.5;
+        }
+        
+        button {
+            display: block;
+            margin: 16px auto;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 25px;
+            background: #ff2f6d;
+            color: white;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+            background: #ff004f;
+        }
+        
+        .handwritten {
+            font-family: 'Patrick Hand', cursive;
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            line-height: 1.6;
+            min-height: 4em;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            padding: 15px;
+            border-radius: 16px;
+            background: #fffaf0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #ff7aa2;
+            margin-top: 12px;
+            color: #5a3b2e;
+        }
+        
+        .hearts,
+        .stars {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        
+        .heart,
+        .star {
+            position: absolute;
+            font-size: 20px;
+            animation: float 6s linear infinite;
+            opacity: 0.85;
+        }
+        
+        .star {
+            color: #fffacd;
+            font-size: 8px;
+            opacity: 0.8;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(1);
                 opacity: 0;
-                pointer-events: none;
             }
-            
+            10% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+        /* Moon behind card */
+        
+        #noteCard::before {
+            content: "🌙";
+            position: absolute;
+            top: -50px;
+            right: 15px;
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+        
+        @media (max-width: 480px) {
             .card {
-                background: rgba(255, 250, 240, 0.95);
-                padding: 30px 20px;
-                border-radius: 20px;
-                max-width: 440px;
-                width: 90%;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-                text-align: left;
-                position: relative;
-                transition: background 1s ease;
+                padding: 25px 15px;
             }
-            
-            h1 {
-                text-align: center;
-                font-size: clamp(1.5rem, 5vw, 2rem);
-                margin-bottom: 12px;
-                color: #ff2f6d;
-            }
-            
-            p {
-                font-size: clamp(0.9rem, 3vw, 1.1rem);
-                line-height: 1.5;
-            }
-            
-            button {
-                display: block;
-                margin: 16px auto;
-                padding: 12px 28px;
-                border: none;
-                border-radius: 25px;
-                background: #ff2f6d;
-                color: white;
-                font-size: clamp(0.9rem, 3vw, 1rem);
-                cursor: pointer;
-                transition: 0.25s ease;
-            }
-            
-            button:hover {
-                transform: scale(1.05);
-                background: #ff004f;
-            }
-            
-            .handwritten {
-                font-family: 'Patrick Hand', cursive;
-                font-size: clamp(1rem, 4vw, 1.2rem);
-                line-height: 1.6;
-                min-height: 4em;
-                white-space: pre-wrap;
-                overflow-wrap: break-word;
-                padding: 15px;
-                border-radius: 16px;
-                background: #fffaf0;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                border-left: 4px solid #ff7aa2;
-                margin-top: 12px;
-                color: #5a3b2e;
-            }
-            
-            .hearts,
-            .stars {
-                position: absolute;
-                inset: 0;
-                pointer-events: none;
-            }
-            
-            .heart,
-            .star {
-                position: absolute;
-                font-size: 20px;
-                animation: float 6s linear infinite;
-                opacity: 0.85;
-            }
-            
-            .star {
-                color: #fffacd;
-                font-size: 8px;
-                opacity: 0.8;
-            }
-            
-            @keyframes float {
-                0% {
-                    transform: translateY(100vh) scale(1);
-                    opacity: 0;
-                }
-                10% {
-                    opacity: 1;
-                }
-                100% {
-                    transform: translateY(-10vh) scale(1.5);
-                    opacity: 0;
-                }
-            }
-            /* Moon behind card */
-            
             #noteCard::before {
-                content: "🌙";
-                position: absolute;
-                top: -50px;
-                right: 15px;
-                font-size: 3rem;
-                opacity: 0.3;
+                font-size: 2.5rem;
+                top: -40px;
             }
-            
-            @media (max-width: 480px) {
-                .card {
-                    padding: 25px 15px;
-                }
-                #noteCard::before {
-                    font-size: 2.5rem;
-                    top: -40px;
-                }
-            }
-        </style>
-    </head>
+        }
+    </style>
+</head>
 
-    <body>
+<body>
 
-        <!-- Screen 1 -->
-        <div class="screen" id="screen1">
-            <div class="card">
-                <h1>Hi Shalet 🌸</h1>
-                <p>
-                    I know we haven’t talked much, but I couldn’t let Valentine’s Day pass without sending a little warmth your way. I hope this tiny note reaches your heart, even just for a moment. Nothing heavy—just a gentle wish from me to you.
-                </p>
-                <p>So I made a small Valentine’s surprise for you 😅</p>
+    <!-- Screen 1 -->
+    <div class="screen" id="screen1">
+        <div class="card">
+            <h1>Hi Shalet 🌸</h1>
+            <p>
+                I know we haven’t talked much, but I couldn’t let Valentine’s Day pass without sending a little warmth your way. I hope this tiny note reaches your heart, even just for a moment. Nothing heavy—just a gentle wish from me to you.
+            </p>
+            <p>So I made a small Valentine’s surprise for you 😅</p>
 
-                <button onclick="startNotes()">Something for you 💌</button>
-            </div>
+            <button onclick="startNotes()">Something for you 💌</button>
         </div>
+    </div>
 
-        <!-- Screen 2 -->
-        <div class="screen hidden" id="screen2">
-            <div class="card" id="noteCard">
-                <h1>A Gentle Valentine’s Wish 💖</h1>
-                <div class="handwritten" id="handwrittenText"></div>
-                <p style="text-align:center; margin-top:12px; font-size:0.9rem; color:#b56576;">— Amani</p>
-            </div>
+    <!-- Screen 2 -->
+    <div class="screen hidden" id="screen2">
+        <div class="card" id="noteCard">
+            <h1>A Gentle Valentine’s Wish 💖</h1>
+            <div class="handwritten" id="handwrittenText"></div>
+            <p style="text-align:center; margin-top:12px; font-size:0.9rem; color:#b56576;">— Amani</p>
         </div>
+    </div>
 
-        <div class="hearts" id="hearts"></div>
-        <div class="stars" id="stars"></div>
+    <div class="hearts" id="hearts"></div>
+    <div class="stars" id="stars"></div>
 
-        <!-- Background Music -->
-        <audio id="bgMusic" loop preload="auto">
+    <!-- Background Music -->
+    <audio id="bgMusic" loop preload="auto">
     <source src="Valentine - Otile Brown.mp3" type="audio/mpeg">
   </audio>
 
-        <script>
-            // Deep romantic English notes
+    <script>
+        // Deep romantic English notes
+        const notes = [
             const notes = [
-                "Under this quiet night sky, I hope your heart feels calm and light, like moonlight gently touching your soul.",
-                "Every twinkle above whispers a little wish for your happiness, soft and tender, just like this note.",
-                "Even though we haven’t talked much, I wanted to send warmth straight to your heart tonight.",
-                "May these little words wrap around you like a gentle hug, bringing a smile that only you can see.",
-                "Tonight, I hope moments make your heart flutter softly, like stars dancing in the sky.",
-                "I hope this note reminds you that someone, even from afar, is sending you care and gentle affection."
+                "Under a quiet sky of thoughts, I hope your heart feels calm and light, like gentle warmth touching your soul.",
+                "Every little moment carries a soft wish for your happiness, tender and sincere, just like this note.",
+                "Even though we haven’t talked much, I wanted to send a bit of warmth straight to your heart.",
+                "May these words wrap around you like a gentle hug, bringing a smile that’s only yours to feel.",
+                "I hope you find small moments that make your heart flutter softly, the kind that stay with you.",
+                "I hope this note reminds you that someone, even from a distance, is wishing you well with genuine care."
             ];
 
-            let noteIndex = 0;
-            let charIndex = 0;
-            let currentNote = '';
-            let typingSpeed = 50;
-            let noteInterval;
+        ];
 
-            function startNotes() {
-                document.getElementById("screen1").classList.add("hidden");
-                document.getElementById("screen2").classList.remove("hidden");
+        let noteIndex = 0;
+        let charIndex = 0;
+        let currentNote = '';
+        let typingSpeed = 50;
+        let noteInterval;
 
-                // Night sky background
-                document.body.style.background = "linear-gradient(to bottom, #0b1d51, #1a2a6c)";
+        function startNotes() {
+            document.getElementById("screen1").classList.add("hidden");
+            document.getElementById("screen2").classList.remove("hidden");
 
-                // Play night-themed music
-                const music = document.getElementById("bgMusic");
-                music.volume = 0.5;
-                music.play().catch(() => {});
+            // Night sky background
+            document.body.style.background = "linear-gradient(to bottom, #0b1d51, #1a2a6c)";
 
-                // Generate stars
-                for (let i = 0; i < 50; i++) createStar();
+            // Play night-themed music
+            const music = document.getElementById("bgMusic");
+            music.volume = 0.5;
+            music.play().catch(() => {});
 
-                // Start handwritten typewriter notes
-                showNextNote();
-                noteInterval = setInterval(showNextNote, 7000);
+            // Generate stars
+            for (let i = 0; i < 50; i++) createStar();
+
+            // Start handwritten typewriter notes
+            showNextNote();
+            noteInterval = setInterval(showNextNote, 7000);
+        }
+
+        function showNextNote() {
+            const el = document.getElementById("handwrittenText");
+            currentNote = notes[noteIndex];
+            el.textContent = '';
+            charIndex = 0;
+            typeLetter(el);
+            noteIndex = (noteIndex + 1) % notes.length;
+        }
+
+        function typeLetter(el) {
+            if (charIndex < currentNote.length) {
+                el.textContent += currentNote[charIndex];
+                charIndex++;
+                setTimeout(() => typeLetter(el), typingSpeed);
             }
+        }
 
-            function showNextNote() {
-                const el = document.getElementById("handwrittenText");
-                currentNote = notes[noteIndex];
-                el.textContent = '';
-                charIndex = 0;
-                typeLetter(el);
-                noteIndex = (noteIndex + 1) % notes.length;
-            }
+        // Hearts
+        const heartsContainer = document.getElementById("hearts");
 
-            function typeLetter(el) {
-                if (charIndex < currentNote.length) {
-                    el.textContent += currentNote[charIndex];
-                    charIndex++;
-                    setTimeout(() => typeLetter(el), typingSpeed);
-                }
-            }
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+            heart.style.fontSize = (14 + Math.random() * 22) + "px";
+            heartsContainer.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+        setInterval(createHeart, 400);
 
-            // Hearts
-            const heartsContainer = document.getElementById("hearts");
+        // Stars
+        const starsContainer = document.getElementById("stars");
 
-            function createHeart() {
-                const heart = document.createElement("div");
-                heart.className = "heart";
-                heart.innerHTML = "❤️";
-                heart.style.left = Math.random() * 100 + "vw";
-                heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-                heart.style.fontSize = (14 + Math.random() * 22) + "px";
-                heartsContainer.appendChild(heart);
-                setTimeout(() => heart.remove(), 6000);
-            }
-            setInterval(createHeart, 400);
+        function createStar() {
+            const star = document.createElement("div");
+            star.className = "star";
+            star.innerHTML = "★";
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.top = Math.random() * 80 + "vh";
+            star.style.animationDuration = (6 + Math.random() * 4) + "s";
+            starsContainer.appendChild(star);
+            setTimeout(() => star.remove(), 10000);
+        }
+    </script>
 
-            // Stars
-            const starsContainer = document.getElementById("stars");
-
-            function createStar() {
-                const star = document.createElement("div");
-                star.className = "star";
-                star.innerHTML = "★";
-                star.style.left = Math.random() * 100 + "vw";
-                star.style.top = Math.random() * 80 + "vh";
-                star.style.animationDuration = (6 + Math.random() * 4) + "s";
-                starsContainer.appendChild(star);
-                setTimeout(() => star.remove(), 10000);
-            }
-        </script>
-
-    </body>
+</body>
